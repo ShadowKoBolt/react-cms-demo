@@ -1,0 +1,28 @@
+= form_for(@admin_page, :html => { :class => "form-horizontal" }) do |f|
+  - if @admin_page.errors.any?
+    .alert.alert-danger.alert-dismissable
+      button.close type="button" data-dismiss="alert" aria-hidden="true" 
+        | &times;
+      h4= "#{pluralize(@admin_page.errors.count,"error")} prohibited this admin_page from being saved:"
+      ul
+        - @admin_page.errors.full_messages.each do |msg|
+          li= msg
+  .form-group
+    = f.label :name, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :name, :class => "form-control"
+  .form-group
+    = f.label :parent_id, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :parent_id, :class => "form-control"
+  .form-group
+    = f.label :structure, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :structure, :class => "form-control", :disabled => true
+  .form-group
+    = f.label :template, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.select :template, [['One Column', :one_column]], {}, {:class => "form-control"}
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => "btn btn-primary"

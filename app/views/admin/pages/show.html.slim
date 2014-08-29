@@ -1,0 +1,34 @@
+.page-header
+  = link_to admin_pages_path, :class => 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_admin_page_path(@admin_page), :class => 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show admin_page
+dl.dl-horizontal
+  dt
+    | Name:
+  dd
+    = @admin_page.name
+  dt
+    | Parent:
+  dd
+    = @admin_page.parent_id
+  dt
+    | Lft:
+  dd
+    = @admin_page.lft
+  dt
+    | Rgt:
+  dd
+    = @admin_page.rgt
+  dt
+    | Depth:
+  dd
+    = @admin_page.depth
+  dt
+    | Structure:
+  dd
+    = @admin_page.structure

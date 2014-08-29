@@ -1,0 +1,10 @@
+---
+ - hosts: default
+   sudo: yes
+   vars: 
+     - ruby_version: ruby2.0
+     - rails_postgresql_db_name: cms
+    
+   roles:
+     - ShadowKoBolt.core
+     - ShadowKoBolt.rails-common
